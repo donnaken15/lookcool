@@ -1,0 +1,6 @@
+E:\Server\files\80\prg\lookcool\conabuse\bin\Debug\conabuse.exe.config
+E:\Server\files\80\prg\lookcool\conabuse\bin\Debug\conabuse.exe
+E:\Server\files\80\prg\lookcool\conabuse\bin\Debug\conabuse.pdb
+E:\Server\files\80\prg\lookcool\conabuse\obj\Debug\conabuse.exe
+E:\Server\files\80\prg\lookcool\conabuse\obj\Debug\conabuse.pdb
+E:\Server\files\80\prg\lookcool\conabuse\obj\Debug\conabuse.csprojResolveAssemblyReference.cache
