@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conabuse", "conabuse\conabuse.csproj", "{2CF0D597-90AA-4567-8341-0C11A17B2971}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hexseekr", "hexseekr\hexseekr.csproj", "{5695E0DD-ABB0-4C0B-9A6E-072449539B58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2CF0D597-90AA-4567-8341-0C11A17B2971}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CF0D597-90AA-4567-8341-0C11A17B2971}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CF0D597-90AA-4567-8341-0C11A17B2971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5695E0DD-ABB0-4C0B-9A6E-072449539B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5695E0DD-ABB0-4C0B-9A6E-072449539B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5695E0DD-ABB0-4C0B-9A6E-072449539B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5695E0DD-ABB0-4C0B-9A6E-072449539B58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

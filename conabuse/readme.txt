@@ -20,6 +20,9 @@ RNG based fake logger
 	 -cINT : amount of iterations to wait if -w2
 	 -bINT :      amount of loops to wait if -w3
 
+     -mc : multicolor lines
+	 -mcb : multicolor background
+
      -r : enable random string formatting
 	        (use if %s or {#}s are encountered in inputs)
 
@@ -37,7 +40,6 @@ RNG based fake logger
 
    any unintentional errors by 
    the program may be used as output
-
    this can be turned off with -ned
 
    example use:

@@ -16,8 +16,19 @@ namespace conabuse
         static bool[] waitmodes = new bool[]
             { true, false, false };
         static bool format = false, ned = false, multicolor, multicolorbk;
-        static object retn;
-        static object[] data, formatdata;
+        static object retn = "placeholder";
+        static object[] data = {
+            retn + " 0",
+            retn + " 1",
+            retn + " 2",
+            retn + " 3",
+            retn + " 4",
+            retn + " 5",
+            retn + " 6",
+            retn + " 7",
+            retn + " 8",
+            retn + " 9"
+        }, formatdata;
         static byte[] randbytearr;
         static string[][] infile;
         static string[] infnames, instrs, fnamesep = { "::\\\\//<<>>\"\"??^^**" };
@@ -158,6 +169,7 @@ namespace conabuse
                         catch (Exception e) { if (!ned) retn = e; }
                     }
                 {
+                    Console.ResetColor();
                     if (multicolor)
                         Console.ForegroundColor = (ConsoleColor)random.Next(1,16);
                     int bkc = random.Next(16);
@@ -182,7 +194,7 @@ namespace conabuse
                             switch(random.Next(24))
                             {
                                 case 0:
-                                    randbytearr = new byte[random.Next(256)];
+                                    randbytearr = new byte[random.Next(64)];
                                     random.NextBytes(randbytearr);
                                     formatdata[i] = BitConverter.ToString(randbytearr).Replace('-',',');
                                     break;

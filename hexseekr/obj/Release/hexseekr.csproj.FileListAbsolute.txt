@@ -1,0 +1,5 @@
+E:\Server\files\80\prg\lookcool\hexseekr\bin\Release\hexseekr.exe
+E:\Server\files\80\prg\lookcool\hexseekr\bin\Release\hexseekr.pdb
+E:\Server\files\80\prg\lookcool\hexseekr\obj\Release\hexseekr.csprojResolveAssemblyReference.cache
+E:\Server\files\80\prg\lookcool\hexseekr\obj\Release\hexseekr.exe
+E:\Server\files\80\prg\lookcool\hexseekr\obj\Release\hexseekr.pdb

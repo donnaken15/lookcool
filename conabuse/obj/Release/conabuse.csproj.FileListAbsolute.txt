@@ -1,4 +1,4 @@
 E:\Server\files\80\prg\lookcool\conabuse\bin\Release\conabuse.exe.config
 E:\Server\files\80\prg\lookcool\conabuse\bin\Release\conabuse.exe
-E:\Server\files\80\prg\lookcool\conabuse\obj\Release\conabuse.csprojResolveAssemblyReference.cache
 E:\Server\files\80\prg\lookcool\conabuse\obj\Release\conabuse.exe
+E:\Server\files\80\prg\lookcool\conabuse\obj\Release\conabuse.csprojResolveAssemblyReference.cache

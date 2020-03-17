@@ -1,0 +1,1480 @@
+Cancelled IRP %p didn't complete in due time.\n  
+DVRF: Driver switched stacks using an unsupported method!\n  
+Deleted lock 0x%p is still owned by the thread 0x%p.   
+************ Verifier Detected a Potential Deadlock *************\n
+Terminated thread 0x%p owns lock.    
+Releasing two locks in reverse order of their acquire. 
+Resource %p acquired before resource %p -- \nCurrent thread (%p) is trying to release %p first\n 
+Deadlock detection: Must release resources in reverse-order\n
+Releasing lock 0x%p that is not owned by the current thread. 
+Releasing lock 0x%p using mismatched API for this lock type. 
+Lock 0x%p doesn't support recursive acquire.     
+Acquiring lock 0x%p using mismatched API for this lock type. 
+Re-initializing active lock 0x%p.    
+Type !deadlock in the debugger for more information.   
+\nDriver Verifier detected that this system didn't finish shutting down\nin more than 20 minutes. To display information about the thread that is\nresponsible for shutting down, use these debugger commands:\n\ndp nt!VfShutdownThread l1;!thread @$p\n\n  
+hal.dll
+ntoskrnl.exe 
+This is a non-BTS processor - no branch tracing will occur.\n
+How would you like to proceed: Resume execution, Disable break, or Bugcheck (rdb)?   
+************************************************************\n\n   
+%s\n\n 
+************************************************************\nDriver Verifier detected violation:\n\n  
+Unknown version %x for DEVICE_DESCRIPTION (%p)   
+DMA Pages Not Locked! MDL %p for DMA not locked  
+Driver has freed too many scatter gather lists %x allocated, %x freed.   
+Driver has freed too many simultaneous adapter channels.     
+Driver has allocated too many simultaneous adapter channels. 
+Driver did not flush adapter buffers -- bytes mapped: %x (%x max). 
+Freed too many common buffers. 
+Freed too many map registers: -%x.   
+Allocated too many map registers : %x (max %x).  
+Allocating too many map registers at a time: %x (max %x).    
+Bad IRQL -- needed %x or less, got %x.     
+Bad IRQL -- needed %x, got %x. 
+Dma MDL %p not mapped in system VA.  
+Virtual address %p out of bounds of MDL %p 
+** VF: 
+**************** HAL Verifier Detected Violation ****************\n
+Padding after allocation at %p has been illegally modified at %p.  
+Padding before allocation at %p has been illegally modified at %p. 
+Verified driver or hardware has corrupted memory at %p.
+Area after %x byte allocation at %p has been modified. 
+Area before %x byte allocation at %p has been modified.
+Map registers needed: %x available: %x     
+Driver is trying to map an address range(%p-%p) that is already mapped    at %p
+Flushing too many map registers\n    
+FLUSH: Can only flush %x bytes to end of map register file (%x attempted)
+Cannot flush buffers that aren't mapped (Addr %p).     
+Extra transfer length crosses a page boundary: Mdl %p, Length %x   
+Extra transfer length crosses a page boundary: Mdl %p, Length %x.  
+Virtual address %p is after the first MDL %p.    
+Virtual address %p is before the first MDL %p.   
+Driver is attempting to map a 0-length transfer. 
+Couldn't track common buffer allocation\n  
+Master devices should return DeallocateObjectKeepRegisters\n 
+Driver at address %p has a problem\n 
+The provided MDL is not sufficient to satisfy the requested length 
+Cannot flush map register that isn't mapped! (Map register base %p, flushing address %p, MDL %p) 
+Cannot put adapter %p until all scatter gather lists are freed (%x left).
+Cannot put adapter %p until all map registers are freed (%x left). 
+Cannot put adapter %p until all common buffers are freed (%x left).
+Cannot put adapter %p until all adapter channels are freed (%x left).    
+Driver has attempted to access an adapter (%p) that has already been released. 
+DMA adapters aren't supposed to be NULL anymore  
+Driver has attempted to access an adapter (%p) that has already been released  
+Too many outstanding reference counts (%x) for adapter %p    
+Error on getting XdvQueryDispatchTable utility from XDV.\n   
+Error on getting TiP utilities from XDV.\n 
+XdvQueryDispatchTable    
+XdvNotifyExtensions
+XdvHibernationNotification     
+Error on providing kernel utilities to  XDV.\n   
+SetXdvKernelUtilities    
+Error on Verifier Extention entry point bound process\n
+GetXdvDriverEntryWrappers
+Error on Verifier Extention DDI bound process\n  
+GetXdvDDIWrappers  
+DifLoadPlugins     
+\t Currently there is no default wrapper routine for %s.\n  \t This means this request is ignored until a default wrapper is created. \n  \t Please contact 'dvrf' for the default wrapper creation. \n
+XDV entry point version mismatch: kernel version %d   driver version %d\n
+XDV DDI version mismatch: kernel version %d   driver version %d\n  
+The image %wZ contains section 0x%p that is not page aligned (name %s).  
+The image %wZ contains an IAT, 0x%p in executable section (name %s).     
+The image %wZ contains an executable and writable section 0x%p (name %s).
+INIT   
+The caller 0x%p specified an executable MDL mapping (priority 0x%x).     
+The caller 0x%p specified an executable page protection 0x%x.
+The caller 0x%p specified an executable pool type 0x%x (tag 0x%x). 
+The caller 0x%p specified an executable pool type 0x%x.
+*****************************************************************\n
+*********** Verifier Detected a Code Integrity Issue ************\n
+The caller provided the IRP Status Information field with a value that\nis greater than the output section of the system buffer.  
+The driver is reinitializing an IRP that is still in use. 
+The driver is reinitializing an IRP that was created with\nIoMakeAssociatedIrp,\nIoBuildAsynchronousFsdRequest,\nIoBuildSynchronousFsdRequest, or\nIoBuildDeviceIoControlRequest. 
+The driver is completing an IRP_MJ_PNP.IRP_MN_REMOVE_DEVICE\nrequest with a failure status code.    
+The driver issued an I/O request with an event that was already signalled\nand received a STATUS_PENDING response.  This can result in unwinding\nbefore the I/O is complete.     
+A driver has forwarded an IRP at IRQL > DISPATCH_LEVEL.   
+A driver has forwarded an IRP at IRQL >= APC_LEVEL.\nThe I/O Completion APC routine will not be able to run for this IRP.   
+A driver has passed an invalid device object to a function that requires\na PDO.  
+Driver has returned a suspicious status. This is probably due to an\nuninitialized variable bug in the driver.  
+A driver has mistakenly called a file I/O function at an IRQL other\nthan PASSIVE_LEVEL.
+A driver has succeeded IRP_MJ_PNP.IRP_MN_QUERY_DEVICE_RELATIONS(TargetRelations)\nbut didn't properly fill out the request or forward the IRP to the\nunderlying hardware stack.  
+A driver has added a device object that is not a PDO to a device\nrelations query.
+A driver has enumerated two child PDO's that returned identical Device\nID's.     
+A driver has detached it's device object during a surprise remove IRP.
+A driver has deleted it's device object during a surprise remove IRP. 
+A driver has marked an IRP pending but didn't return STATUS_PENDING.  
+A driver is attempting to delete a device object that has already been\ndeleted via a prior call to IoDeleteDevice.   
+The UI Number field of the query capabilities structure in a query\ncapabilities IRP was not properly initialized to -1.    
+A driver has returned STATUS_PENDING but did not mark the IRP pending\nvia a call to IoMarkIrpPending.    
+The size field of the query capabilities structure in a query\ncapabilities IRP was not properly initialized.   
+The address field of the query capabilities structure in a query\ncapabilities IRP was not properly initialized to -1.
+Caller has completed untouched IRP_MJ_PNP (instead of passing the irp\ndown) or non-PDO has failed the irp using incorrect value of\nSTATUS_NOT_SUPPORTED.
+The version field of the query capabilities structure in a query\ncapabilities IRP was not properly initialized.
+Caller has completed a IRP_MJ_PNP it didn't understand instead of\npassing it down.     
+Caller has completed successful IRP_MJ_PNP instead of passing it down.
+PDO has not responded to a required IRP.
+PDO has forgotten to fill out the device relation list with the PDO for\nthe TargetDeviceRelation query.  
+IRP completion routines must be in nonpagable code, and this one is not.    
+A driver's completion routine has not marked the IRP\npending if the PendingReturned field was set in the IRP passed to it.\nThis may cause the OS to hang, especially if an error is returned by the\n stack.  
+An IRP dispatch handler has returned a status that is incorrect\n(0xFFFFFFFF). This is probably due to an uninitialized stack variable. 
+An IRP dispatch handler has returned without passing down or completing\nthis Irp or someone forgot to return STATUS_PENDING.     
+An IRP dispatch handler for a bus filter has deleted it's device object,\nbut the PDO is still present! Bus filters must clean up in FastIoDetach\ncallbacks.   
+An IRP dispatch handler has returned a status that is\ninconsistent with the Irp's IoStatus.Status field. 
+IRP_MJ_SYSTEM_CONTROL has been completed by someone other than the\nProviderId. This IRP should either have been completed earlier or\nshould have been passed down.  
+An IRP dispatch handler for a PDO has deleted it's device object, but\nthe hardware has not been reported as missing in a bus relations query.\n    
+An IRP dispatch handler has not properly detached from the stack below\nit upon receiving a remove IRP.   
+This driver has not filled out a dispatch routine for a required IRP\nmajor function.   
+Non-successful non-STATUS_NOT_SUPPORTED IRP status for IRP_MJ_POWER is\nbeing passed down stack. Failed POWER IRPs must be completed.   
+Previously set IRP_MJ_POWER status has been converted to\nSTATUS_NOT_SUPPORTED. This failure status is reserved for use of the OS\n- drivers cannot fail a Power IRP with this value.   
+The driver has not handled a required IRP. The driver must update the\nstatus of the IRP to indicate whether it's been handled or not.  
+The driver has responded to an IRP that is that is reserved for other\ndevice objects elsewhere in the stack.   
+Non-successful non-STATUS_NOT_SUPPORTED IRP status for IRP_MJ_PNP is\nbeing passed down stack. Failed PNP IRPs must be completed. 
+Previously set IRP_MJ_PNP status has been converted to\nSTATUS_NOT_SUPPORTED. This failure status is reserved for use of the OS\n- drivers cannot fail a PnP IRP with this value. 
+Caller has changed the status field of an IRP it does not understand. 
+Caller has changed the information field of an IRP it does not understand.  
+Caller has forwarded an Irp while skipping a device object in the stack.\nThe caller is probably sending IRPs to the PDO instead of to the device\nreturned by IoAttachDeviceToDeviceStack.   
+Caller has trashed or has not properly copied IRP's stack.
+Any Power IRP must have status initialized to STATUS_NOT_SUPPORTED.   
+Any WMI IRP must have status initialized to STATUS_NOT_SUPPORTED.     
+Caller of IoInitializeIrp has passed an IRP that was allocated with\nIoAllocateIrp. This is incorrect and unneccessary, and has caused a quota\nleak. Check the documentation for IoReuseIrp if this IRP is being\nrecycled.
+Any PNP IRP must have status initialized to STATUS_NOT_SUPPORTED.     
+Caller of IoFreeIrp is freeing an IRP that is still in use!     
+Caller of IoFreeIrp is freeing an IRP that is still queued to a\nthread!    
+This IRP is about to run out of stack locations. Someone may have\nforwarded this IRP from another stack. 
+Caller is completing an IRP that is currently queued beneath it! The\ncode handling IRPs returning STATUS_PENDING in this driver appears to be\nbroken.   
+Caller is forwarding an IRP that is currently queued beneath it! The\ncode handling IRPs returning STATUS_PENDING in this driver appears to\nbe broken.   
+Caller has manually copied the stack and has inadvertantly copied the\nupper layer's completion routine. Please use\nIoCopyCurrentIrpStackLocationToNext. 
+*** RtlpMuiRegLoadLicInformation failed with status %x    
+COV: Overflow when calculating RequiredLengthForCurrentModule for %wZ\n     
+COV: Overflow when calculating total required length for %wZ\n  
+COV: Entry for same versioned %wZ found\n     
+COV: Entry for different versioned %wZ found\n
+COV: Max paged pool size (%u) reached, coverage lost for %wZ\n  
+COV: Entry created for %wZ in ExpCovUnloadedModuleList\n  
+COV: Allocation failure. Data for %wZ may be lost\n 
+COV: Overflow when calculating paged pool size for %wZ\n  
+COV: Malformed coverage section at ImageBase 0x%p\n 
+COV: Stored coverage section in PsLoadedModuleList at 0x%p\n    
+COV: Instrumentation Version %ul is not yet supported in kernel hence defaulting to binary name instead of friendly name for %wZ\n
+WINDOWS   
+*** MUI: Can't copy language name for LanguageConfig item %S\n  
+*** MUI: Can't copy language name for LanguageConfig item %u\n  
+*** MUI: Failed to delete value %S from MachineLanguageConfiguration!\n     
+sysinfo: Can't set MachinePreferredUILanguages due to error %d\n
+sysinfo: Can't set MachinePreferredUILanguages\n    
+Unknown command passed to EtwWmitraceWorker.\n
+wmitrace: failed to enable KD_FILTER 0x%x\n   
+wmitrace: EtwpEnableTraceEx failed: 0x%x\n    
+wmitrace: EtwpStopTrace failed: 0x%x\n  
+wmitrace: EtwpStartTrace failed: 0x%x\n 
+wmitrace: EtwpQueryTrace failed: 0x%x\n 
+DBGK: DbgkWerCaptureLiveKernelDump: WerLiveKernelCreateReport failed, status 0x%x.\n\n     
+DBGK: DbgkWerCaptureLiveKernelDump: called before initialization.\n
+DBGK: DbgkWerCaptureLiveKernelDump: called at IRQL > PASSIVE_LEVEL\n     
+DBGK: DbgkWerAddSecondaryData: Secondary data exceeds buffer. Size 0x%x Maxsize 0x%x Datasize 0x%x.\n\n
+DBGK: DbgkWerAddSecondaryData: Invalid parameter.\n\n  
+DBGK: Writing secondary data failed with Status 0x%X\n 
+DBGK: Triage dump write failed with Status 0x%X\n
+DBGK: DbgkWerWriteTriageDump: WerLiveKernelOpenDumpFile failed, status 0x%X\n  
+DBGK: Required total aize: 0x%X\n    
+DBGK: Overflow calculating total blocks. Block count %i\n    
+DBGK: DbgkpWerProcessPolicyResult: Unknown policy option %d\n\n    
+DBGK: callback at address 0x%p returned status 0x%X\n  
+DBGK: Invoking callback at address 0x%p\n  
+DBGK: DbgkpWerInvokeCallbacks entered, context 0x%p\n  
+DBGK: Could not allocate timer.\n    
+DBGK: Failed to reference timer, status 0x%X\n   
+DBGK: Failed to create timer, status 0x%X\n
+DBGK: DbgkpWerDeferredWriteRoutine: WerLiveKernelSubmitReport failed with status 0x%X\n    
+DBGK: DbgkpWerDeferredWriteRoutine: dump write failed with status 0x%X\n 
+DBGK: DbgkpWerDeferredWriteRoutine entered, context 0x%p\n   
+DBGK: DbgkpWerCaptureLiveFullDump: IoCaptureLiveDump failed with status 0x%X\n 
+DBGK: WerLiveKernelOpenDumpFile failed. Status = 0x%X\n
+DBGK: Could not allocate an Io Control.\n  
+DBGK: Creating full dump.  ComponentName %ws, Defer = %d\n   
+DBGK: DbgkpWerCaptureLiveTriageDump: WerLiveKernelSubmitReport failed with status 0x%X\n   
+DBGK: DbgkpWerWriteTriageDump failed, status 0x%X\n    
+DBGK: DbgkpWerInvokeCallbacks failed, status 0x%X\n    
+DBGK: KeCapturePersistentThreadState failed\n    
+DBGK: Creating mini live dump. ComponentName %ws\n     
+DBGK: DbgkpWerCleanupContext: WerLiveKernelCloseHandle failed, 0x%X\n    
+DBGK: DbgkpWerCleanupContext: WerLiveKernelCancelReport failed, 0x%X\n   
+DBGK: DbgkpWerCleanupContext: Context 0x%p\n     
+IoStatusBlock pointing onto itself AsyncUser = %p\n    
+Attempted to send too many records via telemetry.  Stopping error record telemetry for the next second.
+Possible deadlock. Use !locks %p to determine the resource owner\n 
+EX: ExFreePool( %p, %Ix ) contains a lookaside structure that has not been deleted first\n 
+EX: ExFreePool( %p, %Ix ) contains an ERESOURCE structure that has not been ExDeleteResourced\n  
+Driver Verifier: Failed to open Memory Management key with status: 0x%x\n Registry updates aborted!    
+Driver Verifier: Failed to set VerifierOptionFlags key value with status: 0x%x\n Registry updates aborted!   
+Driver Verifier: Clearing Verifier options from Registry for preventing recursive crash.\n 
+Driver Verifier: Failed to delete VerifyDriversSuppress key value with status: 0x%x\n
+Driver Verifier: Failed to delete VerifierTriageContext key value with status: 0x%x\n
+Driver Verifier: Failed to delete VrfPersistThroughUpgrade key value with status: 0x%x\n   
+Driver Verifier: Failed to delete XdvVerifierOptions key value with status: 0x%x\n   
+Driver Verifier: Failed to delete VerifierRandomTargets key value with status: 0x%x\n
+Driver Verifier: Failed to delete VerifyDrivers key value with status: 0x%x\n  
+Driver Verifier: Failed to delete RuleClasses key value with status: 0x%x\n    
+Driver Verifier: Failed to delete VerifyDriverLevel key value with status: 0x%x\n    
+nt!store memory compression    
+Trace database: failing attempt to save biiiiig trace (size %u) \n 
+Unable to attach to active session\n 
+Memory was accessed during this time that was not properly marked\nfor the boot phase of hibernate! Check the callstack and parameters\nto find the pages that need to be marked.\n\n
+\nA bugcheck occurred during the late stages of hibernate suspend or resume.\nDue to verification temporarily enabled by Po during this time,\nregular bugcheck processing may not work.\n\n     
+PopCoalescing: Coalescing timer activated\n
+Without a debugger attached, the following bugcheck would have occurred.\n%4lx %p %p %x %x\n     
+DBGK: IoCaptureLiveDump failed, status 0x%X\n    
+DBGK: Calling IoCaptureLiveDump\n    
+DBGK: File was not opened for synchronous access.\n    
+DBGK: ZwQueryInformationFile IoStatusBlock.Status is failure, status 0x%X\n    
+DBGK: ZwQueryInformationFile failed for dump file, status 0x%X\n   
+DBGK: ObOpenObjectByPointerWithTag failed for file %p, status 0x%X\n     
+DBGK: Invalid file handle %p, ObReferenceObjectByHandleWithTag returns status 0x%X\n 
+DBGK: Invalid event handle %p, status 0x%X\n     
+DBGK: Could not allocate IoLivedumpControl\n     
+CcExitPartition: Partition Exited=%p, PartitionObject=%p now deleting Partition \n   
+CcDeletePartition: Partition Deleted=%p, PartitionObject=%p \n     
+CcInitializePartition: Initialized Partition=%p, PartitionObject=%p \n   
+CcAcquireByteRange (AcceptPage) [0x%I64x, 0x%x]: %p (0x%I64x) BM:%p Dirty: 0x%x\n    
+CC: SharedCacheMap->OpenCount == 0 && DirtyPages == 0 && going onto CleanList!\n     
+CC: Reusing shared cache map that is already marked for deletion!\n
+Failed to query boot entry order. Status: %x 
+Failed to query boot options. Status: %x     
+Failed to set boot entry order. Status: %x   
+Failed to set boot options. Status: %x 
+Failed to delete \"%ws\" variable. Status: %x
+Failed to modify boot entry 0x%x. Status: %x 
+Failed to delete boot entry 0x%x. Status: %x 
+Failed to query \"%ws\" variable. Status: %x 
+Failed to enumerate boot entries. Status: %x 
+Failed load key %ws. Flags: 0x%x File: %s Status: %x     
+Failed open newly loaded key %ws. Flags: 0x%x Status: %x 
+Failed open key %ws. Status: %x  
+Failed to acquire permissions to load hive. Status: %x   
+Failed to get system partition. Status: %x   
+System partition: %s 
+System store path: %s
+Failed to open element %ws key for delete. Status: %x    
+Deleting element %08x
+Failed to open key for all object's elements. Status: %x 
+Failed to convert data for element %s. Status: %x  
+Failed to set registry data for element %s. Status: %x   
+Failed to open key for object's elements. Status: %x     
+Failed to open key for element %s. Status: %x
+BcdGetElementDataWithFlags: Failed to get registry value.Object: %ws Reg type: %lu Status: %x
+Setting element %08x 
+BcdGetElementDataWithFlags: Failed to open key.Object: %ws Type: %ws Status: %x  
+BcdGetElementDataWithFlags: Failed to acquire BCD sync mutant. Status: %x  
+BcdGetElementDataWithFlags: Failed to open elements key.Object: %ws Status: %x   
+Failed to open object's key. Status: %x
+Creating object. Version: %d. Type: 0x%08x   
+Failed to update object GUID string. Status: %x    
+Object alias resolves to %s
+Failed to open key for all objects. Status: %x     
+Failed to get aliased identifier. Status: %x 
+Failed to get object identifier. Status: %x  
+Failed to bind with firmware. Flags: 0x%x Status: %x     
+BcdFlushStore: Failed to acquire BCD sync mutant. Status: %x   
+Store %s is the system store     
+Opening system store. Flags: 0x%x
+Found loaded store at key %s     
+Failed to mark system store. File: %ws Status: %x  
+File is not system store. File: %ws Status: %x     
+Failed to add system store from file. File: %ws Status: %x     
+Failed to set description key value. Store: %s StoreKey: %ws Status: %x    
+Failed to open description key for store. Store: %s StoreKey: %ws Status: %x     
+Failed to initialize objects key for store. Store: %s StoreKey: %ws Status: %x   
+Failed to initialize description key for store. Store: %s StoreKey: %ws Status: %x     
+Failed to find a key to load store %s. Last attempted key: %ws 
+Failed to load hive into key %ws from %s. Status: %x     
+Too many unexplained failures. File: %s Last status: %x  
+Failed to export alterations to firmware. Status: %x     
+Failed to export unload alterations to firmware. Status: %x    
+BcdForciblyUnloadStore: Failed to acquire BCD sync mutant. Status: %x
+BcdCloseStore: Failed to acquire BCD sync mutant. Status: %x   
+!\"#$%&'()*+,-./0123456789:;<=>?@AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJJKKKKLLLLMMMMNNNNOOOOPPPPQQQQQQQQRRRRRRRRSSSSSSSSTTTTTTTTUUUUUUUUVVVVVVVVWWWWWWWWXXXXXXXXYYYYYYYYZZZZZZZZ[[[[[[[[\\\\\\\\\\\\\\\\]]]]]]]]^^^^^^^^________````````aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbccccccccccccccccddddddddddddddddeeeeeeeeeeeeeeeeffffffffffffffffgggggggggggggggghhhhhhhhhhhhhhhhiiiiiiiiiiiiiiiijjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkllllllllllllllllmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnooooooooooooooooppppppppppppppppqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrssssssssssssssssssssssssssssssssttttttttttttttttttttttttttttttttuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\nBattery Information [%p]\n|-- Tag     = %u\n|-- Capabilities  = 0x%08x\n|-- Technology    = %s\n|-- Chemistry     = %s\n|-- DesignedCapacity    = %u\n|-- FullChargedCapacity = %u\n|-- DefaultAlert1 = %u\n|-- DefaultAlert2 = %u\n|-- CriticalBias  = %u\n|-- CycleCount    = %u\n
+\t Currently there is no default wrapper routine for %s.\n  \t This means this request is ignored until a default wrapper is created. \n  \t Please contact 'dvrf' for the default wrapper creation. \n 
+\nDriver Verifier detected that this system didn't finish shutting down\nin more than 20 minutes. To display information about the thread that is\nresponsible for shutting down, use these debugger commands:\n\ndp nt!VfShutdownThread l1;!thread @$p\n\n   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\StoreParameters\\CacheInfo   
+Caller of IoInitializeIrp has passed an IRP that was allocated with\nIoAllocateIrp. This is incorrect and unneccessary, and has caused a quota\nleak. Check the documentation for IoReuseIrp if this IRP is being\nrecycled.    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters     
+\nComposite Information\n|-- Capabilities  = 0x%08x\n|-- DesignedCapacity    = %u\n|-- FullChargedCapacity = %u\n|-- DefaultAlert1 = %u\n|-- DefaultAlert2 = %u\n|-- CriticalBias  = %u\n   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\StoreParameters  
+\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Update\\TargetingInfo\\DynamicInstalled 
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\EncryptionCertificates\\Certificate.1  
+\\Device\\VMBus\\{4d12e519-17a0-4ae4-8eaa-5270fc6abdb7}-{dcc079ae-60ba-4d07-847c-3493609c0870}-0000     
+\\registry\\machine\\system\\CurrentControlSet\\Control\\Session Manager\\Configuration Manager\\Defrag 
+BcdGetElementDataWithFlags: Failed to get registry value.Object: %ws Reg type: %lu Status: %x     
+\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options
+\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Session Manager\\ApiSetSchemaExtensions  
+Memory was accessed during this time that was not properly marked\nfor the boot phase of hibernate! Check the callstack and parameters\nto find the pages that need to be marked.\n\n 
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\CONTROL\\SESSION MANAGER\\Configuration Manager   
+Previously set IRP_MJ_PNP status has been converted to\nSTATUS_NOT_SUPPORTED. This failure status is reserved for use of the OS\n- drivers cannot fail a PnP IRP with this value.     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\7503491f-4a39-4f84-b231-8aca3e203b94     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\StateSeparation\\RedirectionMap\\Files   
+The driver is reinitializing an IRP that was created with\nIoMakeAssociatedIrp,\nIoBuildAsynchronousFsdRequest,\nIoBuildSynchronousFsdRequest, or\nIoBuildDeviceIoControlRequest.     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Lsa\\CentralizedAccessPolicies\\CAPEs    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\StateSeparation\\RedirectionMap\\Keys    
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\DeviceContainerPropertyUpdateEvents
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\MUI\\Settings\\LanguageConfiguration     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Lsa\\CentralizedAccessPolicies\\CAPs     
+\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\VolatileNotifications 
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\CONTROL\\SESSION MANAGER\\MEMORY MANAGEMENT 
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\Windows\\Session Manager\\Quota System  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\ForceDumpsDisabled   
+BcdOpenStore: Failed to acquire BCD sync Mutant. Store: %wsFlags: 0x%x Status: %x     
+\\Registry\\MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Kernel\\KGroups   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Session Manager\\AppCompatCache    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\MUI\\UILanguages\\PendingDelete    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Lsa\\CentralizedAccessPolicies     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Session Manager\\Quota System
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\WindowsTrustedRT\\Parameters
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\LastCrashdump  
+\\REGISTRY\\MACHINE\\OSBOOT\\ControlSetOverride\\Session Manager\\Memory Management   
+\\REGISTRY\\MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\RemovableStorageDevices  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\FileSystem\\GroupPolicyKeys  
+\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v  
+\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Notifications   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\MachineCrash   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Session Manager\\Executive   
+Caller has completed untouched IRP_MJ_PNP (instead of passing the irp\ndown) or non-PDO has failed the irp using incorrect value of\nSTATUS_NOT_SUPPORTED.    
+Caller has manually copied the stack and has inadvertantly copied the\nupper layer's completion routine. Please use\nIoCopyCurrentIrpStackLocationToNext.     
+\\Registry\\Machine\\System\\CurrentControlSet\\Policies\\Microsoft\\Compatibility    
+\\Registry\\Machine\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System   
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\Windows\\Kernel DMA Protection    
+Interrupt Service Routine %p has changed extended thread context.\nContext saved before executing ISR: 0x%p. Context saved after executing ISR: 0x%p.\n 
+System\\CurrentControlSet\\Control\\StateSeparation\\PnP\\ResetDevices\\Services
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Diagnostics\\Performance     
+\\Registry\\Machine\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CommonGlobUserSettings\\     
+System\\CurrentControlSet\\Control\\StateSeparation\\PnP\\ResetDevices\\Classes 
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Power\\LastThermalEvent
+\\Registry\\Machine\\OSDATA\\System\\CurrentControlSet\\Control\\MUI\\UILanguages     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\LeapSecondInformation  
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Power 
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\FsDepends\\Parameters 
+\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Compatibility\\Driver  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Compatibility\\Device  
+System\\CurrentControlSet\\Control\\StateSeparation\\PnP\\DriverHiveOverlays    
+\\REGISTRY\\MACHINE\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\PERFLIB   
+\\Registry\\Machine\\Software\\Microsoft\\SecurityManager\\AdminCapabilities    
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\Windows\\FileSystems\\NTFS  
+\\registry\\machine\\system\\currentcontrolset\\control\\hiveredirectionlist    
+We're just collecting some error info, and then we'll restart for you.    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\ValidationRunlevels    
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\LicenseInfoSuites     
+BcdForciblyUnloadStore: Failed to acquire BCD sync mutant. Status: %x     
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\EventLog\\Security    
+\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FirmwareResources
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\ServiceGroupOrder
+\\REGISTRY\\MACHINE\\SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\SHUTDOWN     
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\HARDWARE PROFILES\\CURRENT
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\WMI\\ProfileSource     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Nls\\Normalization     
+System\\CurrentControlSet\\Control\\ManufacturingMode\\Current\\Services\\
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\WMI\\Restrictions
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\WMI\\GlobalLogger
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\Windows\\DeviceInstall
+Your Windows Insider Build ran into a problem and needs to restart. 
+An IRP dispatch handler has returned a status that is incorrect\n(0xFFFFFFFF). This is probably due to an uninitialized stack variable.     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\DeviceOverrides  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\MUI\\UILanguages 
+\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control\\BitlockerStatus  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\GroupOrderList   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Errata\\Dynamic  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\ProductOptions   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\WMI\\AutoLogger  
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\LsaInformation   
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\KernelVelocity   
+COV: Instrumentation Version %ul is not yet supported in kernel hence defaulting to binary name instead of friendly name for %wZ\n    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Compatibility    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Notifications    
+BcdOpenSystemStore: Failed to acquire BCD sync mutant.Status: %x    
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\Control\\WDI\\Scenarios   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\TieredStorage    
+For more information about this issue and possible fixes, visit     
+We're just collecting some error info, and then you can restart.    
+Non-successful non-STATUS_NOT_SUPPORTED IRP status for IRP_MJ_PNP is\nbeing passed down stack. Failed PNP IRPs must be completed.     
+\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a    
+\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control\\NLS\\Language    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\WMI\\Security    
+\\Registry\\Machine\\System\\CurrentControlSet\\Policies\\EarlyLaunch     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\MUI\\Settings    
+\\Device\\WindowsTrustedRT\\{699AA2F1-A42E-40DF-BABE-3AAAD2BB6A47}  
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\SQMClient\\Windows    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl     
+\nBattery Status [%p]\n|-- PowerState = 0x%08x\n|-- Capacity   = %u\n|-- Voltage    = %u\n|-- Rate = %d\n|-- Est Time   = %u\n  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\EarlyLaunch
+\\Registry\\Machine\\%wZ\\CurrentControlSet\\Hardware Profiles\\%04d
+\\Registry\\Machine\\Hardware\\Description\\System\\CentralProcessor
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control\\CMF\\SqmData     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\FileSystem 
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\Control\\WDI\\Config
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\IDConfigDB 
+\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecureBoot 
+{%08lx-%04hx-%04hx-%02hx%02hx-%02hx%02hx%02hx%02hx%02hx%02hx} 
+\nComposite Status\n|-- PowerState = 0x%08x\n|-- Capacity   = %u\n|-- Voltage    = %u\n|-- Rate = %d\n|-- Est Time   = %u\n     
+PAGEHDLS:KRNL: Failed to initialize (phase 1) plug and play services.  
+PAGEHDLS:KRNL: Failed to initialize (phase 0) plug and play services.  
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\SERVICES\\EVENTLOG  
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\FileInfo  
+\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags   
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\Windows\\System 
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\HotPatch   
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Arbiters   
+\\Registry\\Machine\\System\\LastKnownGoodRecovery\\LastGood.Tmp    
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\CONTROL\\SAFEBOOT   
+\\registry\\machine\\system\\currentcontrolset\\control\\hivelist   
+TerminalServices-RemoteConnectionManager-AllowAppServerMode   
+The address field of the query capabilities structure in a query\ncapabilities IRP was not properly initialized to -1.    
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Windows    
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\CONTROL\\BOOTLOG    
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\MUI\\Settings   
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Syspart    
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\condrv    
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\OneCore    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Storage    
+\\Registry\\MACHINE\\System\\CurrentControlSet\\Control\\CI\\NGEN   
+\\Registry\\Machine\\SOFTWARE\\Policies\\Microsoft\\Windows\\Appx   
+PopCoalescing: ON notification sent (spindown timeout:%u, timer interval: %u, flush delay interval:%u, Enforced:%u)\n     
+((FreeBlock->Flags & HEAP_ENTRY_DECOMMITTED) || (ROUND_UP_TO_POWER2(FreeBlock, PAGE_SIZE) == (ULONG_PTR)FreeBlock)) 
+DLLHOST.EXE,MMC.EXE,RUNDLL32.EXE,SVCHOST.EXE,TASKHOST.EXE     
+{%08lx-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x}\\%04lX    
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\MiniNT     
+\\REGISTRY\\MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WDI    
+CurrentControlSet\\Control\\StateSeparation\\RedirectionMap   
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\CONTROL\\CLASS
+not terminated, too long or invalid number of separators
+\\Registry\\Machine\\Software\\Policies\\Microsoft\\Windows NT
+Failed to query process information for size. Status: %x
+The version field of the query capabilities structure in a query\ncapabilities IRP was not properly initialized.    
+Invalid combination of Host/Current processor architectures passed to AslpEnvResolveVars Host: %x4 Current: %x4     
+\\Registry\\Machine\\System\\LastKnownGoodRecovery\\LastGood  
+\\registry\\machine\\SYSTEM\\CurrentControlSet\\Control\\NUMA 
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\CAD 
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\IPT 
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._  
+\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control\\PXE  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\WMI  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Lsa  
+\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Nls  
+\\Registry\\Machine\\Software\\Microsoft\\SQMClient\\Windows  
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\PnP  
+Interrupt Service Routine %p has changed IRQL.\nIRQL before executing ISR: %d. IRQL after executing ISR: %d.\n
+Specified flags prevent opening unloaded system store   
+Failed to allocate memory for space for process name.   
+KSE: Engine not initialized (disabled explicitly, safe boot on, verifier on, WinPE mode or loader issue)\n    
+Driver Verifier: Failed to set VerifierOptionFlags key value with status: 0x%x\n Registry updates aborted!    
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\ENUM\\ROOT    
+({%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x})    
+System\\CurrentControlSet\\Control\\DeviceContainers\\%s
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\    
+An IRP dispatch handler has returned a status that is\ninconsistent with the Irp's IoStatus.Status field.     
+This IRP is about to run out of stack locations. Someone may have\nforwarded this IRP from another stack.     
+Attempted to send too many records via telemetry.  Stopping error record telemetry for the next second. 
+Session Manager\\Configuration Manager\\LastKnownGood   
+Control\\PendingDriverOperations\\OsExtensionDatabase   
+System\\CurrentControlSet\\Control\\ManufacturingMode\\ 
+PAGEHDLS:Entry could not be recorded due to lack of memory.\n    
+{%08lx-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x}     
+\\Registry\\Machine\\System\\CurrentControlSet\\Control\\     
+DBGK: DbgkWerAddSecondaryData: Secondary data exceeds buffer. Size 0x%x Maxsize 0x%x Datasize 0x%x.\n\n 
+\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control 
+PAGEBGFX:\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control 
+System\\CurrentControlSet\\Hardware Profiles\\Current   
+Control Panel\\Desktop\\LanguageConfigurationPending    
+Diagnostics\\Performance\\SecondaryLogonCKCLSettings    
+PAGELK:\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Control 
+If you call a support person, give them this info:
+\\Registry\\Machine\\SOFTWARE\\Microsoft\\.NETFramework 
+Driver Verifier: VERIFIER_OPTION_ONEBOOT set before boot. Clearing Verifier options from Registry.\n    
+%08lx-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x 
+************************************************************\nDriver Verifier detected violation:\n\n   
+Driver Verifier: Failed to open Memory Management key with status: 0x%x\n Registry updates aborted!     
+AllowAudioToEnableExecutionRequiredPowerRequests  
+PAGEHDLS:KRNL: Failed waiting for boot devices to reinit.  
+PAGEHDLS:KRNL: Failed waiting for boot devices to delete.  
+System\\CurrentControlSet\\Control\\DevicePanels\\%s    
+%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x  
+\\Sessions\\%d\\BaseNamedObjects\\EventShutdownCSRSS    
+\\Registry\\Machine\\System\\DriverDatabase\\Policies   
+Your PC ran into a problem and needs to restart.  
+AppXDeploymentServer-License-AllowAllTrustedApps  
+TtmDevicePrimaryDisplayVisibleStateChangeTimeout  
+\\Registry\\Machine\\SECURITY\\Policy\\GlobalSaclName   
+Cannot flush map register that isn't mapped! (Map register base %p, flushing address %p, MDL %p)  
+PAGEHDLS:KRNL: Failed waiting for boot devices to start.   
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET\\ENUM    
+\\Registry\\Machine\\System\\DriverDatabase\\Updates    
+Resource %p acquired before resource %p -- \nCurrent thread (%p) is trying to release %p first\n  
+!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~ 
+EX: ExFreePool( %p, %Ix ) contains an ERESOURCE structure that has not been ExDeleteResourced\n   
+System\\CurrentControlSet\\Control\\DeviceClasses 
+Created boot entry 0x%x using cached variable     
+Failed to open key for element %s. Status: %x     
+We just need a few more seconds to shut down.     
+PAGEBGFX:|  FadeOverlap:%8u  |\n|  FadeTotal:  %8u  |\n||\n
+PAGEBGFX:|  ProgressManual:   %8u  |\n|  ProgressTotal:    %8u  |\n||\n
+EXWORKER: worker exit with system affinity set, worker routine %p, parameter %p, item %p\n  
+Shim Exception %#x in module \"%hs\", line %d, at address %Ix. flags:%#x. !exr %#p !cxr %#p 
+EX: ExFreePool( %p, %Ix ) contains a lookaside structure that has not been deleted first\n  
+Driver Verifier: Clearing Verifier options from Registry for preventing recursive crash.\n  
+Diagnostics\\Performance\\ShutdownCKCLSettings    
+AnonymousAppContainerImpersonationLevelCheck
+\\Sessions\\%d\\BaseNamedObjects\\EventRitExited  
+%SystemRoot%\\system32\\Logfiles\\WMI\\RtBackup\\ 
+Thermal Zone %S (%p): Above critical temperature (_TMP %d, _CRT %d). Shutdown initiated\n   
+Export directory pointer invalid (points to location outside file), invalid image format    
+CRASH TRIAGE: triage skipped because it was active in previous crash or server system.\n    
+A driver has mistakenly called a file I/O function at an IRQL other\nthan PASSIVE_LEVEL.    
+DBGK: DbgkpWerCaptureLiveTriageDump: WerLiveKernelSubmitReport failed with status 0x%X\n    
+Driver Verifier: Failed to delete VrfPersistThroughUpgrade key value with status: 0x%x\n    
+\\Registry\\Machine\\%wZ\\CurrentControlSet\\%wZ  
+Failed to delete \"%ws\" variable. Status: %x     
+Boot entry exists for DontSync with ID 0x%x 
+Failed to get system store path. Status: %x 
+Control Panel\\Desktop\\LanguageConfiguration     
+DBGK: DbgkpWerDeferredWriteRoutine: WerLiveKernelSubmitReport failed with status 0x%X\n     
+Break repeatedly, break Once, Ignore, terminate Process, or terminate Thread (boipt)? 
+EXWORKER: worker exit with activity ID set, worker routine %p, parameter %p, item %p\n
+PerfIdealAggressiveIncreasePolicyThreshold  
+\\KernelObjects\\SuperfetchParametersChanged
+Kernel-VirtualDynamicPartitioningSupported  
+\\Callback\\542875F90F9B47F497B64BA219CACF69
+PAGEHDLS:KRNL: Failed to UnicodeToAnsi system root.  
+PAGEHDLS:KRNL: Failed to AnsiToUnicode system root.  
+PAGEHDLS:KRNL: Failed to initialize system drivers.  
+\\REGISTRY\\MACHINE\\SYSTEM\\CURRENTCONTROLSET    
+A valid store must have a description key.  
+WSLicensingService-LOBSideloadingActivated  
+Attempting to determine owner of file %ws.  
+Failed to open file attributes. Status: %x  
+PAGEBGFX:|  FadeMemory: %8u  |\n|  FadeIo:     %8u  |\n|  FadeCpu:    %8u  |\n     
+Driver Verifier: Failed to delete VerifyDriversSuppress key value with status: 0x%x\n 
+Driver Verifier: Failed to delete VerifierTriageContext key value with status: 0x%x\n 
+Driver Verifier: Failed to delete VerifierRandomTargets key value with status: 0x%x\n 
+How would you like to proceed: Resume execution, Disable break, or Bugcheck (rdb)?    
+KSE: Ending shim [0x%08X] unregistration. Shim object [0x%08X] ref count is not 0.\n  
+DBGK: Invalid file handle %p, ObReferenceObjectByHandleWithTag returns status 0x%X\n  
+PAGEHDLS:KRNL: Failed to protect system partition.   
+Store will be synchronized with firmware.   
+SeDelegateSessionUserImpersonatePrivilege   
+Security-SPP-LastWindowsActivationHResult   
+\\SystemRoot\\System32\\Drivers\\crashdmp.sys     
+A driver has added a device object that is not a PDO to a device\nrelations query.    
+Driver Verifier: Failed to delete XdvVerifierOptions key value with status: 0x%x\n    
+CcExitPartition: Partition Exited=%p, PartitionObject=%p now deleting Partition \n    
+DisableControlFlowGuardExportSuppression    
+Control\\PendingDriverOperations\\Services  
+PAGEHDLS:KRNL: Failed to initialize boot drivers.    
+PAGEHDLS:KRNL: Failed to create root directories.    
+Translated a DontSync entry with ID 0x%x    
+Diagnostics\\Performance\\BootCKCLSettings  
+\\KernelObjects\\HighNonPagedPoolCondition  
+Failed to query process info. Status: %x    
+Driver Verifier: Failed to delete VerifyDriverLevel key value with status: 0x%x\n     
+CcAcquireByteRange (AcceptPage) [0x%I64x, 0x%x]: %p (0x%I64x) BM:%p Dirty: 0x%x\n     
+Driver is trying to map an address range(%p-%p) that is already mapped    at %p 
+KSE: Cleaned up dangling shim object [0x%08X] (unregistered while refcount >0)\n
+KSE: shimming failed for driver [%ws] - [0x%x] but we let the load succeed ...\n
+AslpFileGetChecksumAttributes called with a partial view which is not supported 
+\n*** Fatal System Error: 0x%08lx\n     (0x%p,0x%p,0x%p,0x%p)\n\n   
+Driver Verifier: Failed to delete RuleClasses key value with status: 0x%x\n     
+DBGK: ZwQueryInformationFile IoStatusBlock.Status is failure, status 0x%X\n     
+KiInitializeMTRR: MTRR_MSR_DEFAULT is not consistent between processors.\n
+FLUSH: Can only flush %x bytes to end of map register file (%x attempted) 
+Cannot put adapter %p until all scatter gather lists are freed (%x left). 
+The image %wZ contains an executable and writable section 0x%p (name %s). 
+PopAdaptive: Console session %u timeouts: %s%s Display:%u,: %s%sInput:%u\n
+AslpFileLargeGetChecksumAttributes failed to get checksum attributes [%x] 
+DBGK: DbgkWerWriteTriageDump: WerLiveKernelOpenDumpFile failed, status 0x%X\n   
+Attempt to read past the end of the database offset 0x%lx size 0x%lx (0x%lx)    
+Driver Verifier: Failed to delete VerifyDrivers key value with status: 0x%x\n   
+PAGEHDLS:\r\n<PROPERTY NAME=\"STOPCODE\" TYPE=\"string\"><VALUE>\"0x%0X\"</VALUE></PROPERTY>   
+Image %wZ has unrecognized unwind information causing a charge of %u pages\n    
+CulpritAddress = %p, Irp = %p, ExpectedStatus = 0x%x, ActualStatus = 0x%x.\n    
+RtlpGetBitState(LookupTable, (ULONG)(LookupIndex - LookupTable->BaseIndex))     
+Driver has attempted to access an adapter (%p) that has already been released.  
+Driver has attempted to access an adapter (%p) that has already been released   
+DBGK: DbgkpWerCaptureLiveFullDump: IoCaptureLiveDump failed with status 0x%X\n  
+SdbpOpenCompressedDatabase failed to allocate expanded buffer - out of memory   
+Trying to read mapped data past the end of the database offset 0x%x size 0x%x   
+Failed to query processes. Status: %x 
+PAGEHDLS:KRNL: Failed to reassign system root. 
+Exporting forcible unload to firmware 
+Failed to allocate process ID buffer. 
+Please hold down the power button.\r\n
+PAGEHDLS:KRNL: Failed marking boot partition.  
+PAGEHDLS:KRNL: Failed to create object types.  
+XDV entry point version mismatch: kernel version %d   driver version %d\n 
+RtlImageDirectoryEntryToData returned ExportDirectory that was too small  
+The image %wZ contains section 0x%p that is not page aligned (name %s).   
+DBGK: DbgkpWerDeferredWriteRoutine: dump write failed with status 0x%X\n  
+AslPathCleanUstr failed with source pointer behind destination pointer.   
+Offset and region size add up to cause an integer overflow or underflow   
+Driver has freed too many scatter gather lists %x allocated, %x freed.    
+A driver has detached it's device object during a surprise remove IRP.    
+Caller has completed successful IRP_MJ_PNP instead of passing it down.    
+PAGEKD:KdPullRemoteFile(%p): About to overwrite %ls and preallocate to %I64x\n   
+*** IopQueryLegacyBusInformation - Driver %wZ returned STATUS_SUCCESS\n   
+SdbpGetStringTableItemFromStringRef failed to get tagid for string ref    
+InitOnceGetStringTableOffset succeeded but failed to find string table    
+IO Built-in driver %wZ failed to initialize with status - 0x%lX\n    
+Cannot put adapter %p until all adapter channels are freed (%x left).     
+A driver has deleted it's device object during a surprise remove IRP.     
+Caller has changed the status field of an IRP it does not understand.     
+DBGK: DbgkpWerCleanupContext: WerLiveKernelCancelReport failed, 0x%X\n    
+CcInitializePartition: Initialized Partition=%p, PartitionObject=%p \n    
+PAGEHDLS:KRNL: Failed to locate system dll.    
+CRASH TRIAGE: no suspect drivers will be selected for verification.\n     
+DBGK: DbgkpWerCleanupContext: WerLiveKernelCloseHandle failed, 0x%X\n     
+VfTriageAddDrivers: Marking %wZ for verification when it is loaded\n
+CRASH TRIAGE: triage skipped because it is not enabled by default.\n
+PAGEBGFX:\n+--BGFX-REPORT-----------------+\n||\n    
+Cannot put adapter %p until all common buffers are freed (%x left). 
+Attempt to release SDB handle that still has unreleased duplicates. 
+************ Verifier Detected a Potential Deadlock *************\n 
+Driver did not flush adapter buffers -- bytes mapped: %x (%x max).  
+**************** HAL Verifier Detected Violation ****************\n 
+Padding before allocation at %p has been illegally modified at %p.  
+The provided MDL is not sufficient to satisfy the requested length  
+Cannot put adapter %p until all map registers are freed (%x left).  
+The caller 0x%p specified an executable pool type 0x%x (tag 0x%x).  
+*****************************************************************\n 
+*********** Verifier Detected a Code Integrity Issue ************\n 
+KSE: Cannot add hardware id until the kshim engine is initialized\n 
+DBGK: DbgkWerCaptureLiveKernelDump: called before initialization.\n 
+RtlRunOnceExecuteOnce failed for InitOnceGetStringTableOffset [%x]  
+CC: Reusing shared cache map that is already marked for deletion!\n 
+CRASH TRIAGE: zeroed rules structure (hit an invalid type rule).\n  
+CRASH TRIAGE: triage skipped because it is disabled explicitely.\n  
+PAGEHDLS:New log entries have been added while waiting, command aborted.\r\n 
+Padding after allocation at %p has been illegally modified at %p.   
+Extra transfer length crosses a page boundary: Mdl %p, Length %x.   
+Driver Verifier: Enabled for %wZ, flags 0x%x, build %ld, key %wZ\n  
+for IRP_MN_QUERY_LEGACY_BUS_INFORMATION, and a NULL POINTER.\n  
+AslpPathWildcardAllocMatchNode failed to create root of path [%x]   
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/x   
+Possible deadlock. Use !locks %p to determine the resource owner\n  
+Trace database: failing attempt to save biiiiig trace (size %u) \n  
+No processes are using this file.     
+Extra transfer length crosses a page boundary: Mdl %p, Length %x    
+XDV DDI version mismatch: kernel version %d   driver version %d\n   
+LdrResFindResource returned null version block with status: [%x]    
+Too many indexes in file: recompile and increase SDB_MAX_INDEXES    
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@><:8644200..,,**(((&&$$$\"\"\"\"   
+ROUND_UP_TO_POWER2(FreeBlock, PAGE_SIZE) == (ULONG_PTR)FreeBlock    
+PAGEHDLS:New log entries have been added during dump, command aborted.\r\n   
+sysinfo: Can't set MachinePreferredUILanguages due to error %d\n    
+PopAdaptive: Global user presence/activity state: %S id: %I32u\n    
+Power button hold update (down: %d, time: %d ms, sequence: %d)\n    
+KSE: Callback shimming - missing driver object or driver name.\n    
+AslEnvGetProcessWowInfo failed to determine processor info [%x]     
+No return context was supplied for InitOnceGetStringTableOffset     
+DBGK: ZwQueryInformationFile failed for dump file, status 0x%X\n    
+Please release the power button.
+PAGEHDLS:KRNL: Failed to find any groups.
+CRASH TRIAGE: triage disabled due to rule with null features.\n     
+KSE: Failed to allocate memory for shim database during boot!\n     
+************************************************************\n\n    
+PAGEKD:KdPullRemoteFile(%p): Return from ZwCreateFile with status %x\n     
+SdbpOpenCompressedDatabase failed to open compressed database.
+CRASH TRIAGE: triage disabled due to invalid internal rules!\n
+CRASH TRIAGE: triage disabled due to invalid registry rules.\n
+PAGEBGFX:\n|  CompressBitmapsCPU: %8u|\n||     
+PAGEBGFX:\n|  ResidentSize:     %8u  |\n||     
+PAGEBGFX:|  LogoSize:   %8u  |\n||\n     
+The caller 0x%p specified an executable page protection 0x%x. 
+KSE: Failed to resolve hooks for shim [0x%08X]. Status 0x%x.\n
+KSE: Failed to load provider for shim [0x%08X]. Status: 0x%x\n
+DBGK: DbgkpWerProcessPolicyResult: Unknown policy option %d\n\n     
+PAGELK:Checksum for partial context page %lx doesn't match full %lx\n
+GetPathFunction (for SdbFileType %d, IsLtRs3: %d) failed [%x] 
+CulpritAddress = %p, DeviceObject1 = %p, DeviceObject2 = %p.\n
+\n*** Assertion failed: %s%s\n***   Source File: %s, line %ld\n\n   
+PAGEBGFX:|  AnimationTotal:   %8u  |\n|| 
+Deadlock detection: Must release resources in reverse-order\n 
+Releasing lock 0x%p that is not owned by the current thread.  
+Releasing lock 0x%p using mismatched API for this lock type.  
+Acquiring lock 0x%p using mismatched API for this lock type.  
+This is a non-BTS processor - no branch tracing will occur.\n 
+Driver has allocated too many simultaneous adapter channels.  
+RtlpQueryRegistryValues: Miscomputed buffer size at line %d\n 
+SDB compression algorithm does not match callback algorithm.  
+CRASH TRIAGE: system will enable verification features %X.\n  
+CRASH TRIAGE: will select target drivers for verification.\n  
+CRASH TRIAGE: verifier triage global/registry settings %X \n  
+KSE: Error reading compatibility value [%ws]: status: %08x\n  
+Master devices should return DeallocateObjectKeepRegisters\n  
+Charge time: Rate=%lld CapToChg=%lld MaxRate=%lld Est=%lld\n  
+PAGELK:Exception Processing Message %lx Parameters %Ix %Ix %Ix %Ix   
+ZwMapViewOfSection failed to map the start of the file [%x]   
+Cannot allocate temporary buffer for parsing the name \"%ws\" 
+HEAP: Free Heap block %p modified at %p after it was freed\n  
+Matching checksum for module %wZ not found in triage dump\n   
+DVRF: Driver switched stacks using an unsupported method!\n   
+Caller has trashed or has not properly copied IRP's stack.    
+KSE: Failed shim [0x%08X] unregistration. Shim not found.\n   
+AslpFileHasActiveMarkWrapper failed (FileSize: %I64u) [%x]    
+AslpEnvResolveVars failed to fail properly for null buffer    
+Failed to get the pointer to index data, index tagid 0x%lx    
+AslEnvExpandStrings2 failed to expand strings for %ws [%x]    
+Allocating too many map registers at a time: %x (max %x).     
+Too many outstanding reference counts (%x) for adapter %p     
+Error on getting XdvQueryDispatchTable utility from XDV.\n    
+The driver is reinitializing an IRP that is still in use.     
+PopAdaptive: Session %u user presence/activity state: %S\n    
+KSE: The provider did not register shim [0x%08X] in time\n    
+DTrace/NT: Overriding post-callback in DTrace test mode.\n    
+DeviceObject:%p ProcessID:%dT FileObject:%p Handle:%dT\n    
+DBGK: DbgkpWerDeferredWriteRoutine entered, context 0x%p\n    
+DBGK: Creating full dump.  ComponentName %ws, Defer = %d\n    
+PAGELK:Checksum for resume context page changed from %lx to %lx\n    
+ZwMapViewOfSection failed to map the end of the file [%x]     
+RtlRunOnceExecuteOnce failed for InitOnceScanIndexes [%x]     
+CRASH TRIAGE: failed to get driver count from the dump.\n     
+CRASH TRIAGE: some drivers changed from previous crash.\n     
+Failed to initialize branch tracing. <Status == 0x%08X>\n     
+DTrace/NT: Overriding pre-callback in DTrace test mode.\n     
+DBGK: Overflow calculating total blocks. Block count %i\n     
+Alignment error in the end of file view for CRC checksum
+AslPathWildcardFindFirst/Next failed to find a file [%x]
+MajorVersion mismatch, MajorVersion 0x%lx Expected 0x%lx
+\\Registry\\Machine\\System\\CurrentControlSet\\Services\\WMI 
+Built-in Win8.1 version lie shims: failed to register.\n
+Verified driver or hardware has corrupted memory at %p. 
+Area before %x byte allocation at %p has been modified. 
+The caller 0x%p specified an executable pool type 0x%x. 
+CRASH TRIAGE: previous crash was %Ix %Ix %Ix %Ix %Ix.\n 
+KSE: Engine flags (after registry/group policy): %08x\n 
+PAGEBGFX:BGFX Secondary Logo Bitmap Display Time GOAL (ms): %d\n 
+Releasing two locks in reverse order of their acquire.  
+Area after %x byte allocation at %p has been modified.  
+Error on Verifier Extention entry point bound process\n 
+DBGK: WerLiveKernelOpenDumpFile failed. Status = 0x%X\n 
+No return context was supplied for InitOnceScanIndexes  
+No expand callback method set. Cannot expand ZDB file.  
+Database \"%ws\" is not of the same type as the main EXE
+The entry 0x%x contains bad valuetype information 0x%x  
+Failed to initialize file mapping from image view [%x]  
+Built-in SkipDriverUnload shims: failed to register.\n  
+Built-in Win8 version lie shims: failed to register.\n  
+Built-in Win7 version lie shims: failed to register.\n  
+ExEnterCriticalRegionAndAcquireSharedWaitForExclusive   
+DBGK: Writing secondary data failed with Status 0x%X\n  
+PAGELK:MemImage->WakeCheck %lx doesn't make PoWakeCheck %lx\n  
+MmSecureVirtualMemory failed to secure the start view   
+SdbFileDetails missing array item for SdbFileType: %d   
+PDB was not supplied for InitOnceGetStringTableOffset   
+%s**  %12s - Address %p base at %p, DateStamp %08lx\r\n 
+Deleted lock 0x%p is still owned by the thread 0x%p.    
+Type !deadlock in the debugger for more information.    
+DBGK: callback at address 0x%p returned status 0x%X\n   
+DBGK: DbgkpWerInvokeCallbacks entered, context 0x%p\n   
+Index tagid 0x%lx is not referring to the index bits    
+SdbGetPathCustomSdb failed to get the database path.    
+One of lpBuffer or lpcbBufferSize should not be null    
+The number of matching EXEs exceeded the max allowed    
+KSE: ZwQueryInformationFile failed getting DB file!\n   
+CRASH TRIAGE: found zeroed rule during validation.\n    
+KSE: Error reading compatibility key: status: %08x\n    
+Failed to start branch tracing. <Status == 0x%08X>\n    
+PAGEKD:EX page in: MmPrefetchVirtualMemory failed, 0x%08x\n    
+PAGEKD:\nKdPullRemoteFile: Local file write failed, 0x%08x\n   
+DBGK: DbgkWerAddSecondaryData: Invalid parameter.\n\n   
+MmSecureVirtualMemory failed to secure the end view     
+NtQueryDirectoryFile failed to query next file [%x]     
+Microsoft.Windows.Containers.RegistryVirtualization     
+\nPassive-level ISR watchdog timeout! Interrupt: %p\n   
+CRASH TRIAGE: crash code %Ix will not be triaged.\n     
+KSE: Engine initialized with registry flags: %08x\n     
+KiInitializeMTRR: Found non-contiguous MTRR mask!\n     
+PAGEKD:\nKdPullRemoteFile: Local file open failed, 0x%08x\n    
+COV: Allocation failure. Data for %wZ may be lost\n     
+COV: Malformed coverage section at ImageBase 0x%p\n     
+KSE: Shimmed driver unload notification processed\n     
+KSE: Query device [%ws, %ws]: found in cache %08x\n     
+DBGK: DbgkpWerWriteTriageDump failed, status 0x%X\n     
+DBGK: DbgkpWerInvokeCallbacks failed, status 0x%X\n     
+IoStatusBlock pointing onto itself AsyncUser = %p\n     
+PAGELK:Checksum for context page changed from %lx to %lx\n     
+Invalid COR20 Metadata virtual address encountered
+Invalid COM Descriptor virtual address encountered
+File size is 0 bytes yet ImageViewBase was present
+Failed to get pointer to the index data tagid x%lx
+The entry 0x%x does not have valuetype information
+Failed to open SDB - File size too large or small.
+CulpritAddress = %p, Irp = %p, DeviceObject = %p.\n     
+DBGK: File was not opened for synchronous access.\n     
+KSE: SdbInitDatabaseInMemory failed during boot!\n
+PAGEBGFX:BGFX Secondary Logo Bitmap Display Time (ms): %d\n
+PAGEHDLS:d  Display all log entries, paging is on.\r\n     
+\nBattery Triggers [%p]\n|- High = %u\n|- Low  = %u\n   
+Exception retrieving version block [%x] for '%ls' 
+Re-mapped file as image to get version block: %ls 
+SdbFileDetails missing function pointer for path. 
+Cannot resolve database, the path length is 0x%lx 
+SdbGuestTargetPlatformFlagsToRuntimePlatformFlags 
+(B)reak, (I)gnore, (W)arn only, (R)emove assert?  
+CRASH TRIAGE: rule was found for crash code %X.\n 
+CRASH TRIAGE: unexpected loader extension size.\n 
+CRASH TRIAGE: driver verifier settings present.\n 
+Caching is disabled by incorrect MTRR settings.\n 
+(WhichSpace=%x, Buffer=%p, Offset=%x, Length=%x)  
+Driver is attempting to map a 0-length transfer.  
+ExEnterCriticalRegionAndAcquireResourceExclusive  
+ExEnterPriorityRegionAndAcquireResourceExclusive  
+TtmpWriteDisplayRequiredPowerRequestUpdatedEvent  
+KSE: Successfully applied shims to driver [%ws]\n 
+KSE: Cannot resolve registry shims to Sdb: 0x%x\n 
+DBGK: Triage dump write failed with Status 0x%X\n 
+Export directory invalid or invalid image format  
+%ls version block after re-mapping as image [%x]  
+SdbpGetProcessHostGuestArchitectures failed [%x]  
+Failed to check MATCHING_WILDCARD_REGISTRY entry  
+CRASH TRIAGE: no rule found for crash code %X.\n  
+DMA Pages Not Locked! MDL %p for DMA not locked   
+Allocated too many map registers : %x (max %x).   
+DMA adapters aren't supposed to be NULL anymore   
+AslpFileMakeStringVersionAttributes failed [%x]   
+AslpFileLargeEnsureLargeFileMapping failed [%x]   
+AslRegistryBuildMachinePath failed for %ws [%x]   
+Failed to allocate %d bytes for user key buffer   
+AslRegistryGetUInt32 failed for key: '%ws' [%x]   
+The database has more matches than SDB_MAX_EXES   
+Failed to read MATCHING_WILDCARD_REGISTRY entry   
+CRASH TRIAGE: a fake crash will be simulated.\n   
+KSE: KsepMatchInitAcpiOemInfo failed [0x%08x]\n   
+Resetting devices in device setup class '%ws'\n   
+Cancelled IRP %p didn't complete in due time.\n   
+Unknown version %x for DEVICE_DESCRIPTION (%p)    
+Virtual address %p is before the first MDL %p.    
+Error on Verifier Extention DDI bound process\n   
+AslpFileGetFileKindDetailAttribute failed [%x]    
+Failed to get an index for tag 0x%lx key 0x%lx    
+RtlStringCchCopyW failed to copy FileName [%x]    
+CulpritAddress = %p, Irp = %p, Status = 0x%x.\n   
+CRASH TRIAGE: all drivers will be targetted.\n    
+Virtual address %p is after the first MDL %p.     
+Error on providing kernel utilities to  XDV.\n    
+ExEnterPriorityRegionAndAcquireResourceShared     
+ExEnterCriticalRegionAndAcquireResourceShared     
+COV: Entry for different versioned %wZ found\n    
+Unknown command passed to EtwWmitraceWorker.\n    
+ObpPushRefDerefInfo - ObpStackTable overflow\n    
+KSE: Succeeded shim [0x%08X] unregistration.\n    
+DBGK: Failed to reference timer, status 0x%X\n    
+AslpFileGetPeExportNameExeWrapper failed [%x]     
+RtlFileMapInitializeByFilePath failed %S [%x]     
+TagID 0x%X, Tag 0x%X not of the expected type     
+The entry 0x%x contains bad binary value 0x%x     
+The entry 0x%x contains bad string value 0x%x     
+Failed to create initialize file mapping [%x]     
+HiveReorganizationResultedInDifferentKeyCount     
+(ROUND_UP_TO_POWER2(Size, PAGE_SIZE) == Size)     
+PopAdaptive: >>>>> Policy parameters change\n     
+PopAdaptive: %sSession %u display state: %u\n     
+PopAdaptive:>>>>> %s session %u input is %s\n     
+Battery estimates spoiled %s by %d; mask=%x\n     
+Server Silo attempting to unload driver %wZ\n     
+DBGK: KeCapturePersistentThreadState failed\n     
+.idata:ext-ms-win-ntos-processparameters-l1-1-0.dll
+Invalid COR20 Metadata signature encountered
+AslFileMappingGetFileKindDetails failed [%x]
+AslRegistryBuildUserPath failed for %ws [%x]
+PDB was not supplied for InitOnceScanIndexes
+Unable to allocate memory for directory path
+SDB Handle count was decremented after zero.
+LimitedToNonLimitedTokenSessionImpersonation
+DBGK: IoCaptureLiveDump failed, status 0x%X\n     
+KSE: KsepMatchInitBiosInfo failed [0x%08x]\n
+KSE: KsepMatchInitCpuInfo failed\n [0x%08x]\n     
+ExWaitForRundownProtectionReleaseCacheAware 
+KSE: Invalid callback code encountered: %u\n
+KSE: Two shims are hooking same callback! \n
+KSE: Applied shim [0x%08X] to driver [%ws]\n
+Failed to find Attribute to use for sdb tag 
+Trying to operate on non-list, non-root tag 
+displayBurstSuppressedWhenPowerSourceChange 
+\n\n\n\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b
+CRASH TRIAGE: standard retail exit point.\n 
+PAGEHDLS:restart  Restart the system immediately.\r\n
+Virtual address %p out of bounds of MDL %p  
+KeAcquireInStackQueuedSpinLockRaiseToSynch  
+KeReleaseInStackQueuedSpinLockFromDpcLevel  
+MmAllocateContiguousMemorySpecifyCacheNode  
+TtmpCommitTerminalDisplayStateUpdateWorker  
+Device using PO_FX_VERSION_V1: devobj 0x%p  
+KSE: Succeeded shim [0x%08X] registration\n 
+KSE: Attempt to re-register shim [0x%08X]\n 
+DBGK: Failed to create timer, status 0x%X\n 
+.idata:ext-ms-win-ntos-stateseparation-l1-1-0.dll  
+.idata:HalRequestDeferredRecoveryServiceInterrupt  
+AslpFileGetClrVersionAttribute failed [%x]  
+AslpPathWildcardAllocMatchNode failed [%x]  
+AslRegistryOpenSubKey passed bad Path [%x]  
+Failed to get the string from the database  
+CulpritAddress = %p, Irp = %p, IRQL = %u.\n 
+PopCoalescing: Coalescing timer activated\n 
+KSE: Engine has group policy flags: %08x\n  
+PAGEBGFX:BGFX system font initialization failure!\n  
+Error on getting TiP utilities from XDV.\n  
+PAGEKD:EX debug work: Unable to find process %p\n  
+!(CheckedFlags & ~HEAP_CREATE_VALID_MASK)   
+Terminating critical thread 0x%p (in %s)\n  
+PAGELK:po: POP_WAKE_DEVICE_AFTER_SLEEP enabled.\n  
+.idata:ext-ms-win-ntos-ksigningpolicy-l1-1-0.dll   
+AslpFileQuery16BitDescription failed [%x]   
+AslpFileGetChecksumAttributes failed [%x]   
+AslpFileGetHeaderAttributesNE failed [%x]   
+AslpFileGetHeaderAttributesPE failed [%x]   
+AslpFileMappingGetFileKind failed %S [%x]   
+Failed to allocate %ld bytes for key path   
+Unable to allocate process history buffer   
+TagID 0x%08X, Tag %04X not STRINGREF type   
+The tag 0x%x was not found under tag 0x%x   
+Failed to get processor architecture [%x]   
+Failed to allocate process history buffer   
+Unable to parse executable path for \"%ws\" 
+Magic does not match a valid value: 0x%lx   
+Microsoft.Windows.Kernel.ProcessSubsystem   
+InputSuppressionMonitorOnRequestUserInput   
+CRASH TRIAGE: target drivers are `%ws'.\n   
+CRASH TRIAGE: invalid rules structure! \n   
+ClearPCIDBits shim: failed to register.\n   
+PAGEHDLS:Type ? or Help for a list of commands.\r\n  
+Couldn't track common buffer allocation\n   
+IoRegisterLastChanceShutdownNotification    
+KeAcquireInStackQueuedSpinLockAtDpcLevel    
+KeTryToAcquireQueuedSpinLockRaiseToSynch    
+RtlUpcaseUnicodeStringToCountedOemString    
+PDO has not responded to a required IRP.    
+PopCoalescing: FLUSH notification sent.\n   
+KSE: ZwOpenFile failed opening DB file!\n   
+KSE: Hooked callbacks for driver [%ws].\n   
+KSE: Failed to patch driver [%ws]: 0x%x\n   
+Dump complete - %d total handles found.\n   
+DBGK: Invoking callback at address 0x%p\n   
+DBGK: Could not allocate an Io Control.\n   
+AslFileMappingEnsureMappedAs failed [%x]    
+AslpFileQuery16BitModuleName failed [%x]    
+AslpFileHasActiveMarkWrapper failed [%x]    
+AslpFileGetVersionAttributes failed [%x]    
+RtlUnicodeStringCbCatStringN failed [%x]    
+AslFileMappingGetImageTypeEx failed [%x]    
+RtlUnicodeStringToAnsiString failed [%x]    
+RtlAnsiStringToUnicodeString failed [%x]    
+Ansi string is too long to convert at %d    
+Can't get the name string for tagid 0x%x    
+Failed to convert tiKObject to trKObject    
+Failed to read TAG_EXE_ID for tiExe 0x%x    
+%<%^%_%Z%T%i%f%`%P%l%g%h%d%e%Y%X%R%S%k%j%   
+Microsoft.Windows.Kernel.BootEnvironment    
+UTCReplace_CommandLineHash_FromEventData    
+TTM_InitiateModernStandbyTransitionStart    
+CulpritAddress = %p, DeviceObject = %p.\n   
+CRASH TRIAGE: no `targets' rule found.\n    
+CRASH TRIAGE: simulated crash code %X.\n    
+ExReleaseResourceAndLeaveCriticalRegion     
+ExReleaseResourceAndLeavePriorityRegion     
+Terminating critical process 0x%p (%s)\n    
+TtmpQueueTerminalDisplayStateOntoDevice     
+KSE: Successfully resolved %d shim(s).\n    
+PAGEBGFX$lp06ntkrnlmp.exe!35_hybridboot     
+PAGEVRFY$lp04ntkrnlmp.exe!30_clientonly     
+RtlFormatCurrentUserKeyPath failed [%x]     
+Root child tag is not index tagid 0x%lx     
+Failed to get the child index from root     
+Failed to convert EXE id to string [%x]     
+AslEnvGetSystem32DirPathBuf failed [%x]     
+Failed to allocate memory for text blob     
+Failed to get TAG_REG_VALUE_DATA_BINARY     
+Unable to allocate memory for full name     
+Microsoft.Windows.Security.Capabilities     
+TTM_InitiateModernStandbyTransitionStop     
+CmSaveMergedKeysAttemptToSaveMasterHive     
+CmpCommitPreparedLightWeightTransaction     
+RtlArrayGet failed to get the next node     
+AVRF: Invalid handle %p in process %p \n    
+RtlpQueryProcessDebugInformationRemote
+CRASH TRIAGE: found a `targets' rule.\n     
+KSE-DS: driver scope shim registered.\n     
+Resetting devices using service '%ws'\n     
+%u System Processor [%u MB Memory] %Z\n     
+RtlCreateSystemVolumeInformationFolder
+IoReportTargetDeviceChangeAsynchronous
+FsRtlCancellableWaitForMultipleObjects
+ExAcquireRundownProtectionCacheAwareEx
+wmitrace: EtwpStartTrace failed: 0x%x\n     
+wmitrace: EtwpQueryTrace failed: 0x%x\n     
+TtmpDispatchSetDefaultDeviceAssignment
+PopAdaptive:>>>>> %s session %u is %s\n     
+Kernel_OSStateChange_HybridSleepResume
+PopCoalescing: OFF notification sent.\n     
+MmLoadSystemImage: Pulled %wZ from kd\n     
+PAGELK:Intel64 Family %u Model %u Stepping %u
+AslpFileQueryVersionString failed [%x]
+Node on the stack with invalid handle.
+SdbGuestHostArchsToRuntimePlatformFlag
+TagID 0x%08X, Tag %04X not BINARY type
+Failed to convert tagref 0x%x to tagid
+Failed to read GUID referenced by 0x%x
+Failed to read MATCHING_TEXT file path
+Failed to get TAG_REG_VALUE_DATA_DWORD
+Failed to get TAG_REG_VALUE_DATA_QWORD
+Failed to read the GUID for tiExe 0x%x
+Microsoft.Windows.TlgAggregateInternal
+UTCReplace_TargetAppType_FromEventData
+lidCloseDisplayOnWhenPowerSourceChange
+NonRetpolineSystemImageLoadedAggregate
+((PHEAP_ENTRY)LastKnownEntry <= Entry)
+CRASH TRIAGE: a real crash happened.\n
+CRASH TRIAGE: null loader extension.\n
+ExAllocateCacheAwareRundownProtection 
+TtmNotifySessionDisplayRequiredChange 
+TtmpUpdateDisplayRequiredPowerRequest 
+PopAdaptive: Display timeout: %u->%u\n
+PopAdaptive:>>>>>%s session %u is %s\n
+KSE: SdbInitDatabaseInMemory Failed!\n
+SAFEBOOT: skipping device = %wZ(%wZ)\n
+.idata:ext-ms-win-ntos-kcminitcfg-l1-1-0.dll 
+INITBGFX$lp12ntkrnlmp.exe!50_coldboot 
+PAGEBGFX$lp12ntkrnlmp.exe!50_coldboot 
+PAGEBGFX$lp11ntkrnlmp.exe!50_coldboot 
+PAGEVRFY$lp12ntkrnlmp.exe!50_coldboot 
+PAGEVRFY$lp11ntkrnlmp.exe!50_coldboot 
+PAGEKD$lp03ntkrnlmp.exe!30_clientonly 
+PAGELK$lp10ntkrnlmp.exe!40_serveronly 
+PAGELK$lp09ntkrnlmp.exe!40_serveronly 
+PAGELK$lp06ntkrnlmp.exe!35_hybridboot 
+.rdata$.text$lp01ntkrnlmp.exe!20_pri7 
+RtlUnicodeStringCatString failed [%x] 
+AslpPathWildcardInitStack failed [%x] 
+Failed to upcase unicode string \"%ws\"     
+Failed to convert guid to string [%x] 
+Buffer too small. Avail: %d, Need: %d 
+Can't get the name string tagid 0x%lx 
+Failed to get MATCHING_TEXT file path 
+Microsoft.Windows.Kernel.DeviceConfig 
+UTCReplace_TargetAppVer_FromEventData 
+ProcessOpenFailedForForcedAccessCheck 
+TTM_SessionDisplayRequiredDereference 
+TTM_DeviceCalloutWatchdogCrashSkipped 
+BGFX internal font error %x char %x!\n
+Kaspersky shim: failed to register.\n 
+MmDoesFileHaveUserWritableReferences  
+IoRegisterBootDriverReinitialization  
+ExReleaseRundownProtectionCacheAware  
+ExAcquireRundownProtectionCacheAware  
+KeReleaseInStackQueuedSpinLockForDpc  
+KeAcquireInStackQueuedSpinLockForDpc  
+ZwQueryInformationTransactionManager  
+!!! RTLMUI: Reusing LocaleBuffer !!!  
+Critical thread 0x%p (in %s) exited\n 
+TtmpAcquireSessionFromTerminalHandle  
+TtmpDisplayBurstPowerSettingCallback  
+Kernel_OSStateChange_HibernateResume  
+Kernel_OSStateChange_HiberbootResume  
+PopPep: register device (0x%p, %wZ)\n 
+Copyright (C) Rational Systems, Inc.  
+KSE: Unable to map view of section!\n 
+KSE: ObRefByHandle(section) failed!\n 
+PAGELK:VIA64 Family %u Model %u Stepping %u  
+PAGELK:AMD64 Family %u Model %u Stepping %u  
+.idata:ext-ms-win-ntos-werkernel-l1-1-1.dll  
+.idata:ext-ms-win-ntos-ksecurity-l1-1-1.dll  
+.idata:NtRegisterProtocolAddressInformation  
+.idata:NtQueryInformationTransactionManager  
+.idata:ext-ms-win-ntos-werkernel-l1-1-0.dll  
+.text$lp10ntkrnlmp.exe!40_serveronly  
+.text$lp09ntkrnlmp.exe!40_serveronly  
+.text$lp08ntkrnlmp.exe!40_serveronly  
+.text$lp06ntkrnlmp.exe!35_hybridboot  
+.text$lp04ntkrnlmp.exe!30_clientonly  
+.text$lp03ntkrnlmp.exe!30_clientonly  
+AslpFileLargeGetChecksum failed [%x]  
+ZwQuerySystemInformation failed [%x]  
+AslEnvGetSysNativeDirPathForGuestBuf  
+AslpPathWildcardPushNode failed [%x]  
+AslpFileGetImageNtHeader failed [%x]  
+Failed to convert name to multi-byte  
+Expand callback failed to expand SDB  
+SdbpGetCustomSdbFileName failed [%x]  
+SdbpGetSystemSdbFilePath failed [%x]  
+SdbpGetProcessHostGuestArchitectures  
+Failed to check file attributes [%x]  
+Failed to initialize SEARCHDBCONTEXT  
+Failed to resolve matching text file  
+Failed to allocate search path parts  
+UTCReplace_LicenseType_FromEventData  
+UTCReplace_TargetAppId_FromEventData  
+ThreadOpenFailedForForcedAccessCheck  
+TTM_TerminalDisplayStateChangedEvent  
+AslpPathWildcardPeekNode failed [%x]  
+ZeroPool shim: failed to register.\n  
+PAGEBGFX:\n+------------------------------+\n\n
+PAGEHDLS:\r\n<INSTANCE CLASSNAME=\"BLUESCREEN\">     
+Dma MDL %p not mapped in system VA.   
+Driver at address %p has a problem\n  
+MmMapLockedPagesWithReservedMapping   
+IoCreateFileSpecifyDeviceObjectHint   
+FsRtlCancellableWaitForSingleObject   
+KeAcquireQueuedSpinLockRaiseToSynch   
+IRP_MN_QUERY_LEGACY_BUS_INFORMATION   
+IRP_MN_FILTER_RESOURCE_REQUIREMENTS   
+TtmNotifySessionPowerRequestDeleted   
+PopAdaptive: Input timeout: %u->%u\n  
+PopAdaptive: Session %u is started\n  
+PAGEKD$lp12ntkrnlmp.exe!50_coldboot   
+PAGE$lp10ntkrnlmp.exe!40_serveronly   
+PAGE$lp09ntkrnlmp.exe!40_serveronly   
+PAGE$lp08ntkrnlmp.exe!40_serveronly   
+PAGE$lp06ntkrnlmp.exe!35_hybridboot   
+PAGE$lp04ntkrnlmp.exe!30_clientonly   
+PAGE$lp03ntkrnlmp.exe!30_clientonly   
+PAGELK$lp12ntkrnlmp.exe!50_coldboot   
+PAGELK$lp11ntkrnlmp.exe!50_coldboot   
+AslpFileLargeEnsureLargeFileMapping   
+CLR version string null or too long   
+AslpFileQueryExportName failed [%x]   
+AslpFileMakeStringVersionAttributes   
+AslpFileGetVersionBlock failed [%x]   
+Failed to get index by tag id 0x%lx   
+Failed to get runtime platform [%x]   
+SdbpGetStringTableItemFromStringRef   
+Failed to read GUID of the database   
+Failed to check MATCHING_TEXT entry   
+Failed to get TAG_REG_VALUE_DATA_SZ   
+AslEnvGetProcessWowInfo failed [%x]   
+TTM_SessionDisplayRequiredReference   
+PeriodIntervalCountBucketLimitsInMs   
+SecureKernelHotPatchOperationStatus   
+CmLoadAppKeyFailedNoInfo(Aggregate)   
+\n*** Verifier assertion failed ***\n 
+LDR: No Locale name for LangId %d \n  
+Unable to attach to active session\n  
+KDTARGET: Refreshing KD connection\n  
+minkernel\\ntos\\kshim\\kseregistry.c 
+Freed too many map registers: -%x.    
+PoFxCompleteDevicePowerNotRequired    
+IoUnregisterPlugPlayNotificationEx    
+CcWaitForCurrentLazyWriterActivity    
+MmFreeContiguousMemorySpecifyCache    
+RtlOemStringToCountedUnicodeString    
+RtlUnicodeStringToCountedOemString    
+RtlUpcaseUnicodeStringToAnsiString    
+IRP_MN_QUERY_RESOURCE_REQUIREMENTS    
+Critical process 0x%p (%s) exited\n   
+TtmpDispatchSetDisplayPowerRequest    
+TtmiPublishDeviceEnumerationEvents    
+PopAdaptive: Session %u is closed\n   
+Kernel_OSStateChange_StandbyResume    
+KSE: got shim(s) for driver [%ws]\n   
+KSE: Applied %d shim(s) to [%ws].\n   
+.idata:ExpInitializeStateSeparationPhase2    
+.idata:ExpInitializeStateSeparationPhase0    
+.idata:ExpInitializeStateSeparationPhase1    
+.idata:NtSetInformationTransactionManager    
+.idata:PsDestroyProcessParameterOverrides    
+.text$lp12ntkrnlmp.exe!50_coldboot    
+.text$lp11ntkrnlmp.exe!50_coldboot    
+AslpFileLargeGetChecksumAttributes    
+AslpFileGetFileKindDetailAttribute    
+AslpFileGetCrcChecksum failed [%x]    
+AslStringAnsiToUnicode failed [%x]    
+LdrResFindResource failed %ls [%x]    
+NtQueryInformationFile failed [%x]    
+RtlInitUnicodeStringEx failed [%x]    
+RtlUpcaseUnicodeString failed [%x]    
+AslPathToSystemPathBuf failed [%x]    
+Failed to create search DB context    
+Failed to read MATCHING_TEXT entry    
+No device query callback specified    
+Failed to check MATCHING_REG entry    
+Failed to retrieve process history    
+Failed to create file mapping [%x]    
+lidClosedSleepStsudySessionCreated    
+\nIdleIntervalCountBucketLimitsInMs   
+\nTotalDeviceConstraintIntervalInUs   
+isKernelDetectedBatteryDischarging    
+PreviousShutdownWasThermalShutdown    
+PhysicalPowerButtonPressInfoAtBoot    
+IOCTL Called from inside Container    
+HiveReorganizationValidationFailed    
+BGFX internal font error char %x!\n   
+Execute '.cxr %p' to dump context\n   
+ExpInterlockedPopEntrySListResume     
+KSE: Initialization failed: 0x%x\n    
+PAGEBGFX:BGFX Display Ready Time (ms): %d\n    
+Terminated thread 0x%p owns lock.     
+Re-initializing active lock 0x%p.     
+ZwQueryInformationResourceManager     
+PsSetCreateProcessNotifyRoutineEx     
+ObReferenceObjectByPointerWithTag     
+ExWaitForRundownProtectionRelease     
+ExIsResourceAcquiredExclusiveLite     
+RtlUpcaseUnicodeStringToOemString     
+TtmGetSessionDisplayRequiredCount     
+TtmiWriteEnumerationEventsToQueue     
+PopPep: unregister device (0x%p)\n    
+%2d %2d %4d %02d:%02d:%02d.%03d\r\n   
+.idata:ext-ms-win-ntos-clipsp-l1-1-0.dll     
+.idata:HalQueryEnvironmentVariableInfoEx     
+.idata:NtQueryInformationResourceManager     
+INIT$lp12ntkrnlmp.exe!50_coldboot     
+PAGEBGFX$lp01ntkrnlmp.exe!20_pri7     
+PAGEVRFY$lp01ntkrnlmp.exe!20_pri7     
+PAGE$lp12ntkrnlmp.exe!50_coldboot     
+PAGE$lp11ntkrnlmp.exe!50_coldboot     
+POOLCODE$lp01ntkrnlmp.exe!20_pri7     
+AslpFileGetClrVersion failed [%x]     
+AslpFileGetPeExportNameExeWrapper     
+AslpFileVerQueryBlock failed [%x]     
+Failed to split the wildcard path     
+AslpPathGetFormatInfo failed [%x]     
+AslFileMappingCreateFromImageView     
+The tag 0x%lx is not an index tag     
+Pulled out a non-stringtable item     
+Failed to convert tagid to tagref     
+Failed to read matching text blob     
+Failed to read MATCHING_REG entry     
+SdbpCheckMatchingWildcardRegistry     
+Failed to construct full key path     
+SdbpGetRegistryMatchingAttributes     
+SdbpCreateSearchPathPartsFromPath     
+Microsoft.Windows.Kernel.Security     
+Microsoft.Windows.Kernel.LiveDump     
+Microsoft.Windows.Kernel.Registry     
+TTM_DeviceEnumeratedTerminalEvent     
+DirectedDripsPnpActionQueueStates     
+\bOneSettingBugcheckRegistryConfig    
+SpuriousManualPowerButtonBugcheck     
+BatteryCommonStatusAtAlarmTrigger     
+RebalanceDueToDynamicPartitioning     
+\nwriteDeferredDumpDataDuration_ms    
+blackbox - PNPDELAYEDREMOVEWORKER     
+The caller provided the IRP Status Information field with a value that\nis greater than the output section of the system buffer.     
+A driver has passed an invalid device object to a function that requires\na PDO.     
+Driver has returned a suspicious status. This is probably due to an\nuninitialized variable bug in the driver.     
+A driver has succeeded IRP_MJ_PNP.IRP_MN_QUERY_DEVICE_RELATIONS(TargetRelations)\nbut didn't properly fill out the request or forward the IRP to the\nunderlying hardware stack.     
+A driver has marked an IRP pending but didn't return STATUS_PENDING.     
+PDO has forgotten to fill out the device relation list with the PDO for\nthe TargetDeviceRelation query.     
+A driver's completion routine has not marked the IRP\npending if the PendingReturned field was set in the IRP passed to it.\nThis may cause the OS to hang, especially if an error is returned by the\n stack.     
+IRP_MJ_SYSTEM_CONTROL has been completed by someone other than the\nProviderId. This IRP should either have been completed earlier or\nshould have been passed down.     
+The driver has not handled a required IRP. The driver must update the\nstatus of the IRP to indicate whether it's been handled or not.     
+Caller has changed the information field of an IRP it does not understand.     
+PAGEHDLS:KRNL: Failed to find any groups.     
+PAGEHDLS:KRNL: Failed to create event.  
+PAGEHDLS:KRNL: Load succeeded.    
+PAGEHDLS:KRNL: Load failed. 
+PAGEHDLS:KRNL: Loading
+PAGEBGFX:\n+------------------------------+\n\n     
+PAGEBGFX:|  FadeHigh:   %8u  |\n  
+PAGEBGFX:|  FadeOverlap:%8u  |\n|  FadeTotal:  %8u  |\n||\n     
+PAGEBGFX:|  FadeLow:    %8u  |\n  
+PAGEBGFX:|  FadeProlog: %8u  |\n  
+PAGEBGFX:|  FadeFrames: %8u  |\n  
+PAGEBGFX:|  ProgressHigh:     %8u  |\n  
+PAGEBGFX:|  ProgressManual:   %8u  |\n|  ProgressTotal:    %8u  |\n||\n     
+PAGEBGFX:|  ProgressMemory:   %8u  |\n  
+PAGEBGFX:|  ProgressLow:%8u  |\n  
+PAGEBGFX:|  ProgressProlog:   %8u  |\n  
+PAGEBGFX:|  ProgressFrames:   %8u  |\n  
+PAGEBGFX:|  DisplayMode:  %4ux%4ux%2u  |\n    
+PAGEBGFX:BGFX Secondary Logo Bitmap Display Time (ms): %d\n     
+PAGELK:Checksum for partial context page %lx doesn't match full %lx\n     
+https://www.windows.com/stopcode     
+Please release the power button.     
+What failed: 
+Stop Code:   
+%1% complete 
+If you call a support person, give them this info:     
+It is now safe to power off the system.    
+Invalid COM Descriptor virtual address encountered     
+Invalid COR20 Metadata signature encountered     
+Invalid COR20 Metadata virtual address encountered     
+SdbGetDatabaseID   
+Can't read database header     
+SDB Handle count was decremented after zero.     
+Unknown registry value type    
+SdbpCheckMatchingRegistryValue 
+Failed to get TAG_REG_VALUE_DATA_DWORD     
+Failed to read value data
+Failed to get TAG_REG_VALUE_DATA_QWORD     
+Failed to read key path  
+Failed to read value type
+Failed to get key path tag     
+AslPathClean failed [%x] 
+AslEnvExpandStrings2 failed [%x]     
+Invalid buffer size
+Invalid path size  
+Failed to read the GUID for tiExe 0x%x     
+SdbpGetExeEntryFlags     
+SdbpResolveMatchingFile  
+Invalid match file length
+SdbpInitializeSearchDBContext  
+SdbpCreateSearchDBContext
+Unable to allocate memory for directory path     
+SdbGetNextChild    
+Invalid argument   
+SdbGetTagFromTagID 
+Error reading data 
+SdbpGetNextTagId   
+Reading from unfinished list   
+SdbInitDatabaseInMemory  
+Failed to allocate sdbcontext  
+SdbpOpenDatabaseInMemory 
+Unable to open main database   
+Failed to read database header 
+Failed to map SDB [%x]   
+SdbpOpenCompressedDatabase failed to open compressed database.     
+Failed to allocate DB structure
+SdbOpenDatabaseEx  
+Failed to open SDB - File size too large or small.     
+SdbpValidateAndApplyCompatFlags
+MajorVersion mismatch, MajorVersion 0x%lx Expected 0x%lx     
+Flags:%d; DatabasePath:%ws     
+Failed to get the database ID  
+SdbpReadMappedData 
+SdbpGetMappedData  
+Failed to read database id 0x%lx     
+Failed to get root tag   
+SdbTagIDToTagRef   
+Bad PDB
+SdbReadBinaryTag   
+TagID 0x%08X, Tag %04X not BINARY type     
+SdbGetBinaryTagData
+Error reading buffer     
+SdbpGetMappedStringFromTable   
+No stringtable in DB     
+SdbGetStringTagPtr 
+Error getting StringRef  
+SdbpReadStringRef  
+Invalid pdb  
+SdbpGetMappedTagData     
+Error getting ptr to tag data  
+SdbpReadTagData    
+Error reading tag data   
+Error reading size data  
+SdbGetTagDataSize  
+SdbReadQWORDTag    
+SdbReadDWORDTag    
+SdbReadGUIDTag     
+SdbpGetTagHeadSize 
+SdbReadWORDTag     
+Error reading tag  
+SdbpFindMatchingName     
+SdbpFindNextNamedTag     
+SdbFindFirstNamedTag     
+Invalid tagid 0x%lx
+SdbFindNextTag     
+SdbQueryDataEx     
+Failed to convert tagref 0x%x to tagid     
+Failed to read GUID referenced by 0x%x     
+SdbReadEntryInformation  
+The entry 0x%x contains no value     
+The entry 0x%x does not have valuetype information     
+SdbGetDatabaseMatchEx    
+SdbQueryDataExTagID
+SdbpCheckPackageAttributes     
+SdbpCheckExe 
+SdbpSearchDB 
+No DATABASE tag found    
+SdbpCheckMatchingWildcardFiles 
+Failed to resolve matching file
+AslPathWildcardFindFirst/Next failed to find a file [%x]     
+Failed to resolve matching dir 
+SdbpCheckMatchingDir     
+SdbpCheckMatchingFiles   
+Failed to read HWID attribute  
+SdbpCheckMatchingDevice  
+Failed to get HWID 
+SdbpCheckMatchingText    
+Failed to allocate temp buffer 
+Failed to map file [%x]  
+Unknown file encoding    
+Overflow doing pointer addition
+Failed to read encoding type   
+SdbpCheckMatchingTextEntry     
+Failed to get text to match blob     
+Failed to read text encoding   
+SdbpGetMatchingTextAttributes  
+Failed to read text to match   
+Failed to read MATCHING_TEXT file path     
+SdbpCheckMatchingRegistryEntry 
+Unknown registry value data type     
+Failed to read value     
+Bad index 0x%lx    
+Database \"%ws\" is not of the same type as the main EXE     
+Failed to open database  
+RtlStringCchCatW failed [%x]   
+AslGuidToString failed [%x]    
+AslPathCombine failed [%x]     
+CulpritAddress = %p.\n   
+CulpritAddress = %p, DeviceObject1 = %p, DeviceObject2 = %p.\n     
+CulpritAddress = %p, Irp = %p.\n     
+Failed to query boot entry order. Status: %x     
+Failed to set boot options. Status: %x     
+Failed to modify boot entry 0x%x. Status: %x     
+Failed to delete boot entry 0x%x. Status: %x     
+Failed to query \"%ws\" variable. Status: %x     
+Failed to enumerate boot entries. Status: %x     
+Failed to add boot entry. Status: %x 
+Translated a DontSync object to ID 0x%x    
+BiUpdateEfiEntry failed %x     
+BiExportBcdObjects failed %x   
+BiExportEfiBootManager failed: %x    
+Created new boot entry 0x%x    
+BiCreateEfiEntry failed %x     
+BiBindEfiEntries failed %x     
+BiBindEfiBootManager failed %x 
+BiBuildIdentifierList failed %x
+BiExportStoreAlterationsToEfi failed %x    
+BiBindEfiNamespaceObjects failed %x  
+Failed open newly loaded key %ws. Flags: 0x%x Status: %x     
+System partition: %s     
+System store path: %s    
+Deleting element %08x    
+Failed to open key for all object's elements. Status: %x     
+Setting element %08x     
+Object GUID: %s    
+Failed to open object's key. Status: %x    
+Object alias resolves to %s    
+Failed to get aliased identifier. Status: %x     
+Opening object %s  
+Opening system store. Flags: 0x%x    
+Failed to find a key to load store %s. Last attempted key: %ws     
+COV: Overflow when calculating total required length for %wZ\n     
+COV: Max paged pool size (%u) reached, coverage lost for %wZ\n     
+COV: Entry created for %wZ in ExpCovUnloadedModuleList\n     
+COV: Overflow when calculating paged pool size for %wZ\n     
+CRASH TRIAGE: rules are ok.\n  
+VfTriageAddDrivers: Marking %wZ for verification when it is loaded\n     
+CRASH TRIAGE: triage enabled!\n
+CRASH TRIAGE: triage disabled due to invalid internal rules!\n     
+CRASH TRIAGE: triage disabled due to invalid registry rules.\n     
+CRASH TRIAGE: a real crash happened.\n     
+CRASH TRIAGE: null loader extension.\n     
+CRASH TRIAGE: triage skipped because it is not enabled by default.\n     
+Built-in Win8.1 version lie shims: failed to register.\n     
+KSE: SdbInitDatabaseInMemory failed during boot!\n     
+KsepShimDbAddress == NULL
+KsepShimDbHandle == NULL 
+KsepShimDbDuringBoot == FALSE  
+minkernel\\ntos\\kshim\\ksesdb.c     
+KSE: BiosVendor name [%ws] .\n 
+KSE: BiosDate name [%ws] .\n   
+KSE: KsepMatchInitBiosInfo failed [0x%08x]\n     
+KSE: Initialized phase 0x%x\n  
+NOEXECUTE    
+NOEXECUTE=ALWAYSOFF
+NOEXECUTE=OPTIN    
+NOEXECUTE=OPTOUT   
+NOEXECUTE=ALWAYSON 
+KiInitializeMTRR: MTRR_MSR_DEFAULT is not consistent between processors.\n     
