@@ -1,0 +1,4 @@
+E:\Server\files\80\prg\lookcool\hexseekr\bin\Debug\hexseekr.exe
+E:\Server\files\80\prg\lookcool\hexseekr\bin\Debug\hexseekr.pdb
+E:\Server\files\80\prg\lookcool\hexseekr\obj\Debug\hexseekr.exe
+E:\Server\files\80\prg\lookcool\hexseekr\obj\Debug\hexseekr.pdb
